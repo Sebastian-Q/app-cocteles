@@ -1,11 +1,12 @@
 {
-    "name": "Mi PWA de Gestión de Tareas",
-    "short_name": "Gestor PWA",
+    "name": "Buscador PWA de Cócteles",
+    "short_name": "Cócteles PWA",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#1A202C",
     "theme_color": "#4A90E2",
-    "description": "Una aplicación progresiva para gestionar tus tareas diarias, funciona offline.",
+    "description": "Una aplicación progresiva para buscar recetas de cócteles. Funciona offline y se instala fácilmente en tu dispositivo.",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "./images/icons/192.png",
