@@ -16,11 +16,11 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: "Poppins", system-ui, -apple-system, sans-serif;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--text-color);
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
 
 /* Soporte modo standalone */
@@ -31,7 +31,7 @@ html, body {
   }
 }
 
-/* ============================== CONTENEDOR GENERAL ============================== */
+/* ============================== CONTENEDOR APP ============================== */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -103,6 +103,7 @@ main {
   border-radius: var(--radius);
   font-weight: 600;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .search-box button:active {
@@ -164,15 +165,57 @@ main {
 }
 
 /* ============================== RESPONSIVE ============================== */
-@media (max-width: 480px) {
+
+/* Vista móvil (PWA instalada o pantallas pequeñas) */
+@media (max-width: 600px) {
+  .app-container {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   header h1 {
     font-size: 1.4rem;
   }
+
   .search-box {
     flex-direction: column;
     gap: 0.8rem;
   }
+
   .search-box button {
     width: 100%;
+  }
+}
+
+/* Vista escritorio (web) */
+@media (min-width: 601px) {
+  body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .app-container {
+    margin-top: 2rem;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  main {
+    padding: 2rem 2rem 3rem;
+  }
+
+  .search-box {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .cocktail-card img {
+    max-width: 600px;
+    margin: 1.5rem auto;
   }
 }
