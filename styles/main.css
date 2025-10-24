@@ -1,0 +1,173 @@
+/* ============================== ESTILOS PRINCIPALES PWA CÓCTELES ============================== */
+:root {
+  --primary-color: #ff7e5f;
+  --secondary-color: #feb47b;
+  --accent-color: #4ecdc4;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==============================  ENCABEZADO ============================== */
+header {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================== CAJA DE BÚSQUEDA ============================== */
+main {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-box input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
+}
+
+.search-box button {
+  padding: 0.8rem 1.2rem;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-box button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* ============================== RESULTADOS ============================== */
+.result-container {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.result-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.result-container p {
+  line-height: 1.6;
+  margin: 0.4rem 0;
+}
+
+/* ============================== TARJETA DE CÓCTEL ============================== */
+.cocktail-card {
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: var(--transition);
+}
+
+.cocktail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.cocktail-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 1rem auto;
+  display: block;
+}
+
+/* ============================== BADGE OFFLINE ============================== */
+.offline-badge {
+  display: inline-block;
+  background: #ff4747;
+  color: white;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+/* ============================== ANIMACIONES ============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================== RESPONSIVE ============================== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+}
